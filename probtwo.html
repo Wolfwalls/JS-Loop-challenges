@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collatz tracker</title>
+</head>
+<body>
+    <script>
+        let currentNum = Number(window.prompt("enter a num"))
+        let steps = 0;
+        let finalStr = ""
+        while (currentNum != 1){
+            steps += 1;
+            finalStr += currentNum + ", ";
+            //change currentNum
+            if(currentNum % 2 == 0){
+                currentNum = currentNum / 2
+            }
+            else if(currentNum % 2 == 1){
+                currentNum = currentNum * 3 + 1
+            }
+            else{
+                console.log("How are you here?")
+            }
+        }
+        finalStr += "1"
+        console.log(finalStr)
+        console.log(steps)
+    </script>
+    
+</body>
+</html>

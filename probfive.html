@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unique character Detective</title>
+</head>
+<body>
+    <script>
+        let username = window.prompt("Enter a username: ").toLowerCase()
+        let firstuniquechar = "";
+        let lengthofusername = username.length
+        let character;
+        for(let i = 0; i < lengthofusername; i+=1){
+
+            let temp = username.slice(0, i) + username.slice(i+1);
+            if(temp.includes(username[i])){
+                continue;
+            }
+            else{
+                firstuniquechar = username[i]
+                console.log(`${firstuniquechar} at position ${i + 1}`)
+                break;
+            }
+        }
+        if(firstuniquechar == ""){
+            console.log("There was no unique character")
+        }
+    </script>
+</body>
+</html>

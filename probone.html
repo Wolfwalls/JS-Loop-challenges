@@ -8,13 +8,20 @@
 <body>
     <script>
         let userentry  = window.prompt("Enter a number 10 through 99: ") ;
-        while (Number(userentry) < 10  ||  Number(userentry) > 99){
+        while (Number(userentry) < 10  ||  Number(userentry) > 99 || Math.floor(Number(userentry)) != Number(userentry)){
              userentry = window.prompt("Enter a number 10 through 99: ");
             
         }; 
         
+        evenorodd = userentry % 2
+        console.log(evenorodd)
+        if (evenorodd == 0){
+            console.log("The number you entered is even")
+        }
+        else if(evenorodd == 1){
+            console.log("The number you entered is odd")
+        }
         
-
     </script>
 </body>
 </html>

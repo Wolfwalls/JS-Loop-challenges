@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let username = ""; 
+        let fixedusername;
+        let hasspaces = false;
+        let overundcharlim = false;
+        let firstletter = true;
+        let firstchar;
+        do{
+            
+            username = window.prompt("Type your username(your username must be less than 14 characters and greater than 6 characters, have no spaces, and the first character must be a letter.):")
+            firstchar = username.charCodeAt(0)
+            if(username.includes(" ")){
+                hasspaces = true
+                console.log("Spaces AHHH")
+            }
+            else{
+                hasspaces = false
+            }
+            if(username.trim().length < 6 || username.trim().length > 14){
+                overundcharlim = true
+                console.log("too high or too low  I dunno")
+            }
+            else{
+                overundcharlim = false
+            }
+            if(firstchar > 65 && firstchar < 90){
+                
+                  firstletter = true 
+                  }
+            else if (firstchar < 97 || firstchar > 122){
+                    firstletter = false
+                    console.log("That isn't a letter") 
+            }
+            else{
+                firstletter = true
+            }
+            
+        }while(hasspaces == true || overundcharlim == true || firstletter == false)
+
+        console.log(`${username[0].toUpperCase()}${username.slice(1,-1).toLowerCase()}${username.slice(-1).toLowerCase()}`)
+    </script>
+</body>
+</html>

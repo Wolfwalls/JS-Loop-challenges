@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exact change Machine</title>
+</head>
+<body>
+    <script>
+        let numberofpennies = 0;
+        let numberofnickels;
+        let numberofdimes;
+        let numberofquarters; 
+        let numberofcents = Number(window.prompt("How many cents should be put in (1-499):"))
+        while (numberofcents < 1 || numberofcents > 499 || Math.floor(numberofcents) != numberofcents){
+            numberofcents = Number(window.prompt("How many cents should be put in (1-499):"))
+        }
+        while (numberofcents % 5 != 0){
+                numberofcents -= 1;
+                numberofpennies += 1;
+        } //85
+        //figure out quarters
+        numberofquarters = Math.floor(numberofcents / 25)
+        numberofcents %= 25; //10
+        numberofdimes = Math.floor(numberofcents / 10)
+        numberofcents %= 10; //0
+        numberofnickels = Math.floor(numberofcents/ 5)
+        numberofcents %= 5; //0
+        console.log(`${numberofquarters} quarters, ${numberofdimes} dimes, ${numberofnickels} nickels, ${numberofpennies} pennies`)
+
+    </script>
+</body>
+</html>
